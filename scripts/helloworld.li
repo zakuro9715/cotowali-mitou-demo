@@ -2,4 +2,5 @@ require './util'
 
 var path = 'examples/hello_world.li'
 compile(path)
+sleep(5)
 run(path)

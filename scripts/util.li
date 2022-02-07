@@ -1,12 +1,10 @@
 require 'term'
 fn compile(file: string) {
-  println(term::bg_green("\$ lic $file"))
-  sleep(5)
-  println(@lic(file))
-  sleep(5)
+  println(term::bg_blue("\$ lic $file | tail -n 20 ").bold())
+  println(@lic(file) |> tail(20) |> join("\n"))
 }
 
 fn run(file: string) {
-  println(term::bg_green("\$ lic $file | sh"))
+  println(term::bg_blue("\$ lic $file | sh ").bold())
   println(@lic(file) |> @sh())
 }
