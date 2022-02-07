@@ -1,0 +1,12 @@
+require 'term'
+fn compile(file: string) {
+  println(term::bg_green("\$ lic $file"))
+  sleep(5)
+  println(@lic(file))
+  sleep(5)
+}
+
+fn run(file: string) {
+  println(term::bg_green("\$ lic $file | sh"))
+  println(@lic(file) |> @sh())
+}
